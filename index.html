@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo IA - A Era da Inteligência Artificial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fundo Interativo de Rede Neural -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="logo">IA<span>.Explorer</span></div>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#funcionamento">Como Funciona</a></li>
+            <li><a href="#historia">História</a></li>
+            <li><a href="#tipos">Tipos</a></li>
+            <li><a href="#pros-contras">Impactos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Desvendando a <span class="highlight">Inteligência Artificial</span></h1>
+        <p>A tecnologia que redefiniu a história humana: origens, funcionamento e o futuro.</p>
+        <a href="#sobre" class="btn-primary">Explorar Agora</a>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        
+        <!-- Sobre -->
+        <section id="sobre" class="card">
+            <h2>O que é e qual sua Importância?</h2>
+            <p>A Inteligência Artificial (IA) é a capacidade de sistemas de computador simularem a inteligência humana para resolver problemas, aprender com dados e tomar decisões.</p>
+        </section>
+
+        <!-- Tipos de IA Interativos -->
+        <section id="tipos" class="card">
+            <h2>Tipos de Inteligência Artificial</h2>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'ani')">IA Estreita (ANI)</button>
+                <button class="tab-btn" onclick="openTab(event, 'agi')">IA Geral (AGI)</button>
+                <button class="tab-btn" onclick="openTab(event, 'asi')">Superinteligência (ASI)</button>
+            </div>
+
+            <div id="ani" class="tab-content active">
+                <h3>IA Estreita (Artificial Narrow Intelligence)</h3>
+                <p>Especializada em apenas uma tarefa específica. É a IA que utilizamos no dia a dia, como assistentes virtuais, reconhecimento facial e algoritmos de recomendação.</p>
+            </div>
+            <div id="agi" class="tab-content">
+                <h3>IA Geral (Artificial General Intelligence)</h3>
+                <p>Sistemas com capacidade cognitiva equivalente à humana, capazes de aprender e raciocinar em qualquer domínio. Ainda está em estágio teórico e de pesquisa.</p>
+            </div>
+            <div id="asi" class="tab-content">
+                <h3>Superinteligência Artificial</h3>
+                <p>Conceito de uma IA que superaria o intelecto humano em todas as áreas, incluindo criatividade e sabedoria social.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
