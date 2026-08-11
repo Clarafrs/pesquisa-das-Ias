@@ -16,10 +16,10 @@
         <div class="logo">IA<span>.Explorer</span></div>
         <ul class="nav-links">
             <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#funcionamento">Como Funciona</a></li>
-            <li><a href="#historia">História</a></li>
             <li><a href="#tipos">Tipos</a></li>
-            <li><a href="#pros-contras">Impactos</a></li>
+            <li><a href="#historia">História</a></li>
+            <li><a href="#famosas">IAs Famosas</a></li>
+            <li><a href="#quiz">Quiz</a></li>
         </ul>
     </nav>
 
@@ -36,7 +36,7 @@
         <!-- Sobre -->
         <section id="sobre" class="card">
             <h2>O que é e qual sua Importância?</h2>
-            <p>A Inteligência Artificial (IA) é a capacidade de sistemas de computador simularem a inteligência humana para resolver problemas, aprender com dados e tomar decisões.</p>
+            <p>A Inteligência Artificial (IA) é a capacidade de sistemas de computador simularem a inteligência humana para resolver problemas, aprender com dados e tomar decisões de forma autônoma.</p>
         </section>
 
         <!-- Tipos de IA Interativos -->
@@ -58,7 +58,76 @@
             </div>
             <div id="asi" class="tab-content">
                 <h3>Superinteligência Artificial</h3>
-                <p>Conceito de uma IA que superaria o intelecto humano em todas as áreas, incluindo criatividade e sabedoria social.</p>
+                <p>Conceito de uma IA que superaria o intelecto humano em todas as áreas, incluindo criatividade e inteligência emocional.</p>
+            </div>
+        </section>
+
+        <!-- Linha do Tempo -->
+        <section id="historia" class="card">
+            <h2>História e Avanços da IA</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="year">1950</span>
+                    <h3>Teste de Turing</h3>
+                    <p>Alan Turing propõe o famoso teste para avaliar se uma máquina consegue simular a inteligência humana.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">1997</span>
+                    <h3>Deep Blue vs. Kasparov</h3>
+                    <p>O supercomputador da IBM vence o campeão mundial de xadrez Garry Kasparov.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">2012</span>
+                    <h3>Revolução do Deep Learning</h3>
+                    <p>Redes neurais profundas mostram precisão histórica no reconhecimento de imagens (ImageNet).</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">2022-Presente</span>
+                    <h3>Era dos Modelos Multimodais</h3>
+                    <p>Surgimento de IAs generativas avançadas capazes de processar texto, áudio, vídeo e código simultaneamente.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IAs Mais Famosas -->
+        <section id="famosas" class="card">
+            <h2>IAs Mais Conhecidas</h2>
+            <div class="grid-ias">
+                <div class="ia-card">
+                    <h3>ChatGPT</h3>
+                    <p><strong>Desenvolvedor:</strong> OpenAI</p>
+                    <p>Modelo de linguagem focado em conversação, redação de textos e programação.</p>
+                </div>
+                <div class="ia-card">
+                    <h3>Gemini</h3>
+                    <p><strong>Desenvolvedor:</strong> Google</p>
+                    <p>IA multimodal nativa, capaz de raciocinar sobre texto, imagens, áudio e vídeo.</p>
+                </div>
+                <div class="ia-card">
+                    <h3>Claude</h3>
+                    <p><strong>Desenvolvedor:</strong> Anthropic</p>
+                    <p>Focada em segurança, análise detalhada de documentos e escrita natural.</p>
+                </div>
+                <div class="ia-card">
+                    <h3>Midjourney</h3>
+                    <p><strong>Desenvolvedor:</strong> Midjourney Inc.</p>
+                    <p>Especializada em gerar arte visual hiper-realista a partir de descrições de texto.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Interativo -->
+        <section id="quiz" class="card">
+            <h2>Teste seus Conhecimentos</h2>
+            <div id="quiz-container">
+                <p id="question-text">Quem é considerado um dos pais da ciência da computação e propôs o teste de inteligência das máquinas?</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer(this, false)">Ada Lovelace</button>
+                    <button onclick="checkAnswer(this, true)">Alan Turing</button>
+                    <button onclick="checkAnswer(this, false)">Sam Altman</button>
+                    <button onclick="checkAnswer(this, false)">Geoffrey Hinton</button>
+                </div>
+                <p id="quiz-result"></p>
             </div>
         </section>
 

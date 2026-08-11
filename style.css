@@ -160,3 +160,87 @@ body {
 .tab-content.active {
     display: block;
 }
+
+/* Linha do Tempo */
+.timeline {
+    border-left: 2px solid var(--acento-ciano);
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.timeline-item {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.05rem;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: var(--acento-ciano);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--acento-ciano);
+}
+
+.year {
+    font-weight: bold;
+    color: var(--acento-ciano);
+    font-size: 0.9rem;
+}
+
+/* Grid de IAs Famosas */
+.grid-ias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.ia-card {
+    background: rgba(11, 60, 73, 0.4);
+    border: 1px solid var(--card-border);
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.ia-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--acento-ciano);
+}
+
+.ia-card h3 {
+    color: var(--acento-ciano);
+    margin-bottom: 0.5rem;
+}
+
+/* Quiz Interativo */
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.quiz-options button {
+    background: var(--bg-dark);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    padding: 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.quiz-options button:hover {
+    background: var(--petroleo-light);
+}
+
+#quiz-result {
+    font-weight: bold;
+    margin-top: 0.5rem;
+}

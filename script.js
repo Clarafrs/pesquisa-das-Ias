@@ -12,7 +12,27 @@ function openTab(evt, tabName) {
     evt.currentTarget.classList.add("active");
 }
 
-// Fundo Interativo de Partículas (Rede Neural Simples)
+// Lógica do Quiz
+function checkAnswer(button, isCorrect) {
+    const resultElement = document.getElementById('quiz-result');
+    const buttons = button.parentElement.querySelectorAll('button');
+    
+    buttons.forEach(btn => btn.disabled = true);
+
+    if (isCorrect) {
+        button.style.backgroundColor = '#2e7d32';
+        button.style.borderColor = '#4caf50';
+        resultElement.innerText = 'Resposta correta! Alan Turing idealizou o conceito em 1950.';
+        resultElement.style.color = '#4caf50';
+    } else {
+        button.style.backgroundColor = '#c62828';
+        button.style.borderColor = '#ef5350';
+        resultElement.innerText = 'Incorreto! A resposta certa é Alan Turing.';
+        resultElement.style.color = '#ef5350';
+    }
+}
+
+// Fundo Interativo de Partículas (Rede Neural)
 const canvas = document.getElementById('neural-canvas');
 const ctx = canvas.getContext('2d');
 
