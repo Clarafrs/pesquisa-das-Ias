@@ -192,3 +192,154 @@ function restartQuiz() {
 window.addEventListener('DOMContentLoaded', () => {
     loadQuestion();
 });
+// Banco de Dados do Quiz Didático (6 Perguntas)
+const quizData = [
+    {
+        question: "O que é o famoso 'Teste de Turing' proposto em 1950?",
+        options: [
+            "Um teste para medir a velocidade de processamento dos chips",
+            "Um método para avaliar se uma máquina consegue simular o comportamento humano",
+            "Um programa para criar imagens automáticas por computador",
+            "Um teste de segurança contra invasões hackers"
+        ],
+        answer: 1,
+        explanation: "Alan Turing propôs que, se um humano conversar com uma máquina sem perceber que ela é um computador, essa máquina demonstra inteligência."
+    },
+    {
+        question: "Qual é a principal diferença entre IA Estreita (ANI) e IA Geral (AGI)?",
+        options: [
+            "A IA Estreita só funciona na internet, enquanto a AGI roda offline",
+            "A IA Estreita resolve apenas tarefas específicas; a AGI pode aprender qualquer área cognitiva humana",
+            "A IA Estreita é paga e a AGI é totalmente gratuita",
+            "Não existe diferença, ambos são nomes para a mesma tecnologia"
+        ],
+        answer: 1,
+        explanation: "Praticamente todas as IAs atuais (ChatGPT, Gemini, filtros) são Estreitas. A AGI (capacidade humana completa) ainda é um conceito em desenvolvimento."
+    },
+    {
+        question: "O que significa dizer que um modelo de Inteligência Artificial é 'Multimodal'?",
+        options: [
+            "Que ele funciona em computadores, celulares e smartwatches ao mesmo tempo",
+            "Que ele consegue processar e gerar múltiplos tipos de dados simultaneamente (texto, imagem, áudio e código)",
+            "Que ele utiliza vários idiomas ao mesmo tempo",
+            "Que ele precisa de vários processadores para ligar"
+        ],
+        answer: 1,
+        explanation: "IAs multimodais (como o Gemini) conseguem interpretar fotos, áudios, vídeos e textos em uma única interação."
+    },
+    {
+        question: "Como o Aprendizado Supervisionado ensina um algoritmo de IA?",
+        options: [
+            "Com um programador digitando cada regra manualmente",
+            "Deixando o sistema solto na internet sem qualquer dado inicial",
+            "Fornecendo um grande volume de dados já rotulados com as respostas corretas",
+            "Fazendo a máquina assistir a filmes para entender o mundo"
+        ],
+        answer: 2,
+        explanation: "No aprendizado supervisionado, mostramos exemplos prontos (ex: fotos de gatos com a etiqueta 'gato') para a IA aprender o padrão."
+    },
+    {
+        question: "O que são 'Tokens' no funcionamento de um modelo de linguagem (LLM) como o ChatGPT?",
+        options: [
+            "Moedas digitais usadas para pagar pelo uso da IA",
+            "Pedaços de palavras ou caracteres que a IA utiliza para processar e gerar textos",
+            "Os chips físicos localizados dentro dos servidores da OpenAI",
+            "Senhas secretas de acesso ao sistema"
+        ],
+        answer: 1,
+        explanation: "Os modelos de linguagem quebram as frases em pequenas unidades chamadas 'tokens' para calcular a probabilidade da próxima palavra."
+    },
+    {
+        question: "O que é o chamado 'Viés Algorítmico' na Inteligência Artificial?",
+        options: [
+            "Um erro que faz o computador desligar sozinho",
+            "Quando a IA ganha consciência e passa a desobedecer ordens",
+            "A reprodução de preconceitos ou injustiças presentes nos dados usados para treinar a IA",
+            "A velocidade exagerada com que a IA responde às perguntas"
+        ],
+        answer: 2,
+        explanation: "Se os dados usados no treinamento contiverem preconceitos históricos ou lacunas, a IA aprenderá e repetirá esses mesmos desvios."
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+    const q = quizData[currentQuestion];
+    document.getElementById('quiz-question-number').innerText = `Pergunta ${currentQuestion + 1} de ${quizData.length}`;
+    document.getElementById('question-text').innerText = q.question;
+    
+    const optionsContainer = document.getElementById('quiz-options');
+    optionsContainer.innerHTML = '';
+
+    // Remove explicação anterior se existir
+    const oldExp = document.getElementById('quiz-explanation');
+    if (oldExp) oldExp.remove();
+
+    q.options.forEach((opt, index) => {
+        const btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.onclick = () => selectOption(btn, index);
+        optionsContainer.appendChild(btn);
+    });
+}
+
+function selectOption(button, selectedIndex) {
+    const q = quizData[currentQuestion];
+    const buttons = document.querySelectorAll('#quiz-options button');
+    buttons.forEach(btn => btn.disabled = true);
+
+    const isCorrect = selectedIndex === q.answer;
+
+    if (isCorrect) {
+        button.style.backgroundColor = '#2e7d32';
+        button.style.borderColor = '#4caf50';
+        score++;
+    } else {
+        button.style.backgroundColor = '#c62828';
+        button.style.borderColor = '#ef5350';
+        buttons[q.answer].style.backgroundColor = '#2e7d32';
+    }
+
+    // Exibe explicação didática da resposta
+    const expDiv = document.createElement('div');
+    expDiv.id = 'quiz-explanation';
+    expDiv.innerHTML = `<strong>Explicação:</strong> ${q.explanation}`;
+    document.getElementById('quiz-content').appendChild(expDiv);
+
+    // Tempo para leitura da explicação antes de avançar
+    setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < quizData.length) {
+            loadQuestion();
+        } else {
+            showQuizResults();
+        }
+    }, 4000);
+}
+
+function showQuizResults() {
+    document.getElementById('quiz-content').style.display = 'none';
+    const resultContainer = document.getElementById('quiz-result-container');
+    resultContainer.style.display = 'block';
+    
+    const percentage = Math.round((score / quizData.length) * 100);
+    document.getElementById('quiz-final-score').innerHTML = 
+        `Você acertou ${score} de ${quizData.length} perguntas! (${percentage}%)<br>` +
+        `<span style="font-size: 0.9rem; color: #e6edf3;">` +
+        (percentage >= 80 ? "Excelente! Você domina os conceitos básicos de IA." : "Bom trabalho! Releia as seções do site para se tornar um especialista.") +
+        `</span>`;
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    document.getElementById('quiz-result-container').style.display = 'none';
+    document.getElementById('quiz-content').style.display = 'block';
+    loadQuestion();
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    loadQuestion();
+});

@@ -367,3 +367,45 @@ body {
     background: var(--petroleo-light);
     border-color: var(--acento-ciano);
 }
+/* Cards de Aprendizado */
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.learning-card {
+    background: rgba(13, 17, 23, 0.6);
+    border: 1px solid var(--card-border);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.learning-card .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.learning-card h3 {
+    color: var(--acento-ciano);
+    margin-bottom: 0.5rem;
+}
+
+.learning-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Explicação do Quiz */
+#quiz-explanation {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: rgba(0, 229, 255, 0.1);
+    border-left: 3px solid var(--acento-ciano);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
