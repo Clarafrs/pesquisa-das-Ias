@@ -1,4 +1,4 @@
-// Sistema de Abas
+// Sistema de Abas dos Tipos de IA
 function openTab(evt, tabName) {
     let tabContent = document.getElementsByClassName("tab-content");
     for (let i = 0; i < tabContent.length; i++) {
@@ -22,12 +22,12 @@ function checkAnswer(button, isCorrect) {
     if (isCorrect) {
         button.style.backgroundColor = '#2e7d32';
         button.style.borderColor = '#4caf50';
-        resultElement.innerText = 'Resposta correta! Alan Turing idealizou o conceito em 1950.';
+        resultElement.innerText = 'Resposta correta! Garry Kasparov foi vencido em 1997 pelo Deep Blue.';
         resultElement.style.color = '#4caf50';
     } else {
         button.style.backgroundColor = '#c62828';
         button.style.borderColor = '#ef5350';
-        resultElement.innerText = 'Incorreto! A resposta certa é Alan Turing.';
+        resultElement.innerText = 'Incorreto! A resposta certa é Garry Kasparov.';
         resultElement.style.color = '#ef5350';
     }
 }
@@ -40,15 +40,15 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particlesArray = [];
-const numberOfParticles = 70;
+const numberOfParticles = 75;
 
 class Particle {
     constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 2 + 1;
-        this.speedX = (Math.random() - 0.5) * 1.5;
-        this.speedY = (Math.random() - 0.5) * 1.5;
+        this.speedX = (Math.random() - 0.5) * 1.2;
+        this.speedY = (Math.random() - 0.5) * 1.2;
     }
     update() {
         this.x += this.speedX;
@@ -109,3 +109,86 @@ window.addEventListener('resize', () => {
 
 init();
 animate();
+// Dados e Lógica do Quiz Expandido
+const quizData = [
+    {
+        question: "Quem foi o campeão mundial de xadrez vencido pelo supercomputador Deep Blue em 1997?",
+        options: ["Alan Turing", "Garry Kasparov", "Ada Lovelace", "Geoffrey Hinton"],
+        answer: 1
+    },
+    {
+        question: "Qual tipo de IA é especializada em executar apenas uma tarefa específica, como o ChatGPT ou sistemas de reconhecimento facial?",
+        options: ["IA Geral (AGI)", "Superinteligência (ASI)", "IA Estreita (Restrita)", "IA Autônoma"],
+        answer: 2
+    },
+    {
+        question: "Qual destas ferramentas é uma IA multimodal desenvolvida pelo Google?",
+        options: ["Midjourney", "Claude", "ChatGPT", "Gemini"],
+        answer: 3
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+    const q = quizData[currentQuestion];
+    document.getElementById('quiz-question-number').innerText = `Pergunta ${currentQuestion + 1} de ${quizData.length}`;
+    document.getElementById('question-text').innerText = q.question;
+    
+    const optionsContainer = document.getElementById('quiz-options');
+    optionsContainer.innerHTML = '';
+
+    q.options.forEach((opt, index) => {
+        const btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.onclick = () => selectOption(btn, index === q.answer);
+        optionsContainer.appendChild(btn);
+    });
+}
+
+function selectOption(button, isCorrect) {
+    const buttons = document.querySelectorAll('#quiz-options button');
+    buttons.forEach(btn => btn.disabled = true);
+
+    if (isCorrect) {
+        button.style.backgroundColor = '#2e7d32';
+        button.style.borderColor = '#4caf50';
+        score++;
+    } else {
+        button.style.backgroundColor = '#c62828';
+        button.style.borderColor = '#ef5350';
+        buttons[quizData[currentQuestion].answer].style.backgroundColor = '#2e7d32';
+    }
+
+    setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < quizData.length) {
+            loadQuestion();
+        } else {
+            showQuizResults();
+        }
+    }, 1500);
+}
+
+function showQuizResults() {
+    document.getElementById('quiz-content').style.display = 'none';
+    const resultContainer = document.getElementById('quiz-result-container');
+    resultContainer.style.display = 'block';
+    
+    document.getElementById('quiz-final-score').innerText = 
+        `Você acertou ${score} de ${quizData.length} perguntas!`;
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    document.getElementById('quiz-result-container').style.display = 'none';
+    document.getElementById('quiz-content').style.display = 'block';
+    loadQuestion();
+}
+
+// Inicializar a primeira pergunta do quiz ao carregar a página
+window.addEventListener('DOMContentLoaded', () => {
+    loadQuestion();
+});
