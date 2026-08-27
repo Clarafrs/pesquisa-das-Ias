@@ -1,5 +1,5 @@
 // ==========================================
-// 1. SISTEMA DE ABAS (TIPOS DE IA)
+// 1. SISTEMA DE ABAS
 // ==========================================
 function openTab(evt, tabName) {
     let tabContent = document.getElementsByClassName("tab-content");
@@ -15,74 +15,74 @@ function openTab(evt, tabName) {
 }
 
 // ==========================================
-// 2. QUIZ DIDÁTICO INTERATIVO (6 PERGUNTAS)
+// 2. QUIZ INTERATIVO (6 PERGUNTAS)
 // ==========================================
 const quizData = [
     {
         question: "O que é o famoso 'Teste de Turing' proposto em 1950?",
         options: [
-            "Um teste para medir a velocidade de processamento dos chips",
+            "Um teste para medir a velocidade dos processadores",
             "Um método para avaliar se uma máquina consegue simular o comportamento humano",
-            "Um programa para criar imagens automáticas por computador",
-            "Um teste de segurança contra invasões hackers"
+            "Um programa para geração automática de imagens",
+            "Um teste de segurança contra invasões digitais"
         ],
         answer: 1,
-        explanation: "Alan Turing propôs que, se um humano conversar com uma máquina sem perceber que ela é um computador, essa máquina demonstra inteligência."
+        explanation: "Alan Turing propôs que, se um humano conversar com uma máquina sem perceber que ela é um computador, a máquina demonstra inteligência."
     },
     {
         question: "Qual é a principal diferença entre IA Estreita (ANI) e IA Geral (AGI)?",
         options: [
-            "A IA Estreita só funciona na internet, enquanto a AGI roda offline",
-            "A IA Estreita resolve apenas tarefas específicas; a AGI pode aprender qualquer área cognitiva humana",
+            "A IA Estreita só funciona online, enquanto a AGI roda offline",
+            "A IA Estreita executa tarefas específicas; a AGI possui capacidade cognitiva humana completa",
             "A IA Estreita é paga e a AGI é totalmente gratuita",
-            "Não existe diferença, ambos são nomes para a mesma tecnologia"
+            "Ambas são exatamente a mesma tecnologia com nomes diferentes"
         ],
         answer: 1,
-        explanation: "Praticamente todas as IAs atuais (ChatGPT, Gemini, filtros) são Estreitas. A AGI (capacidade humana completa) ainda é um conceito em desenvolvimento."
+        explanation: "As IAs atuais são Estreitas (especialistas em uma função). A AGI (capacidade humana geral) ainda está em desenvolvimento."
     },
     {
-        question: "O que significa dizer que um modelo de Inteligência Artificial é 'Multimodal'?",
+        question: "O que caracteriza um modelo de IA 'Multimodal'?",
         options: [
-            "Que ele funciona em computadores, celulares e smartwatches ao mesmo tempo",
-            "Que ele consegue processar e gerar múltiplos tipos de dados simultaneamente (texto, imagem, áudio e código)",
-            "Que ele utiliza vários idiomas ao mesmo tempo",
-            "Que ele precisa de vários processadores para ligar"
+            "Ele roda em múltiplos sistemas operacionais ao mesmo tempo",
+            "Ele consegue processar e gerar diferentes tipos de dados (texto, imagem, áudio e código)",
+            "Ele opera em vários idiomas simultaneamente",
+            "Ele exige múltiplos computadores conectados para ligar"
         ],
         answer: 1,
-        explanation: "IAs multimodais (como o Gemini) conseguem interpretar fotos, áudios, vídeos e textos em uma única interação."
+        explanation: "Modelos multimodais conseguem interpretar e integrar diferentes formatos de mídia em uma única resposta."
     },
     {
-        question: "Como o Aprendizado Supervisionado ensina um algoritmo de IA?",
+        question: "Como funciona o Aprendizado Supervisionado?",
         options: [
-            "Com um programador digitando cada regra manualmente",
-            "Deixando o sistema solto na internet sem qualquer dado inicial",
-            "Fornecendo um grande volume de dados já rotulados com as respostas corretas",
-            "Fazendo a máquina assistir a filmes para entender o mundo"
+            "O programador insere cada regra manualmente no código",
+            "O algoritmo aprende sem nenhum dado inicial fornecido",
+            "O sistema é treinado utilizando dados rotulados com as respostas corretas",
+            "A máquina assiste a vídeos para aprender sobre o mundo"
         ],
         answer: 2,
-        explanation: "No aprendizado supervisionado, mostramos exemplos prontos (ex: fotos de gatos com a etiqueta 'gato') para a IA aprender o padrão."
+        explanation: "No aprendizado supervisionado, o modelo aprende comparando suas previsões com exemplos já etiquetados."
     },
     {
-        question: "O que são 'Tokens' no funcionamento de um modelo de linguagem (LLM) como o ChatGPT?",
+        question: "O que são 'Tokens' em modelos de linguagem (LLMs)?",
         options: [
-            "Moedas digitais usadas para pagar pelo uso da IA",
-            "Pedaços de palavras ou caracteres que a IA utiliza para processar e gerar textos",
-            "Os chips físicos localizados dentro dos servidores da OpenAI",
-            "Senhas secretas de acesso ao sistema"
+            "Moedas virtuais para pagar pelo uso da API",
+            "Pedaços de palavras ou caracteres usados para processar o texto",
+            "Servidores físicos onde os modelos ficam hospedados",
+            "Chaves de acesso para autenticação de usuários"
         ],
         answer: 1,
-        explanation: "Os modelos de linguagem quebram as frases em pequenas unidades chamadas 'tokens' para calcular a probabilidade da próxima palavra."
+        explanation: "Os modelos dividem o texto em 'tokens' para calcular matematicamente a probabilidade das próximas palavras."
     },
     {
-        question: "O que é o chamado 'Viés Algorítmico' na Inteligência Artificial?",
+        question: "O que representa o 'Viés Algorítmico' na IA?",
         options: [
-            "Um erro que faz o computador desligar sozinho",
-            "Quando a IA ganha consciência e passa a desobedecer ordens",
-            "A reprodução de preconceitos ou injustiças presentes nos dados usados para treinar a IA",
-            "A velocidade exagerada com que a IA responde às perguntas"
+            "Um erro técnico que trava o sistema",
+            "A reprodução de preconceitos presentes nos dados de treinamento",
+            "A capacidade da IA de tomar decisões por conta própria",
+            "A velocidade de resposta do algoritmo"
         ],
-        answer: 2,
-        explanation: "Se os dados usados no treinamento contiverem preconceitos históricos ou lacunas, a IA aprenderá e repetirá esses mesmos desvios."
+        answer: 1,
+        explanation: "Se os dados fornecidos contiverem distorções ou históricos discriminatórios, a IA aprenderá e replicará esses padrões."
     }
 ];
 
@@ -152,10 +152,7 @@ function showQuizResults() {
     
     const percentage = Math.round((score / quizData.length) * 100);
     document.getElementById('quiz-final-score').innerHTML = 
-        `Você acertou ${score} de ${quizData.length} perguntas! (${percentage}%)<br>` +
-        `<span style="font-size: 0.95rem; color: #e6edf3; display: inline-block; margin-top: 0.5rem;">` +
-        (percentage >= 80 ? "Excelente! Você domina os conceitos de IA." : "Bom trabalho! Releia os conteúdos do site para reforçar o aprendizado.") +
-        `</span>`;
+        `Você acertou ${score} de ${quizData.length} perguntas! (${percentage}%)`;
 }
 
 function restartQuiz() {
@@ -167,7 +164,7 @@ function restartQuiz() {
 }
 
 // ==========================================
-// 3. FUNDO INTERATIVO (REDE NEURAL CANVAS)
+// 3. FUNDO INTERATIVO (CANVAS)
 // ==========================================
 const canvas = document.getElementById('neural-canvas');
 if (canvas) {
@@ -176,7 +173,7 @@ if (canvas) {
     canvas.height = window.innerHeight;
 
     let particlesArray = [];
-    const numberOfParticles = 70;
+    const numberOfParticles = 60;
 
     class Particle {
         constructor() {
@@ -247,44 +244,47 @@ if (canvas) {
     animateCanvas();
 }
 
-// Inicialização imediata do quiz
-loadQuestion();
 // ==========================================
 // 4. FUNCIONALIDADES DE ACESSIBILIDADE
 // ==========================================
-let currentFontSize = 100; // Porcentagem do tamanho inicial da fonte
+document.addEventListener('DOMContentLoaded', () => {
+    loadQuestion();
 
-const btnIncrease = document.getElementById('btn-increase-font');
-const btnDecrease = document.getElementById('btn-decrease-font');
-const btnReset = document.getElementById('btn-reset-font');
-const btnContrast = document.getElementById('btn-high-contrast');
+    let zoomLevel = 100;
 
-if (btnIncrease && btnDecrease && btnReset && btnContrast) {
+    const btnIncrease = document.getElementById('btn-increase-font');
+    const btnDecrease = document.getElementById('btn-decrease-font');
+    const btnReset = document.getElementById('btn-reset-font');
+    const btnContrast = document.getElementById('btn-high-contrast');
 
-    // Aumentar fonte
-    btnIncrease.addEventListener('click', () => {
-        if (currentFontSize < 140) {
-            currentFontSize += 10;
-            document.documentElement.style.fontSize = `${currentFontSize}%`;
-        }
-    });
+    if (btnIncrease) {
+        btnIncrease.onclick = () => {
+            if (zoomLevel < 150) {
+                zoomLevel += 10;
+                document.body.style.zoom = `${zoomLevel}%`;
+            }
+        };
+    }
 
-    // Diminuir fonte
-    btnDecrease.addEventListener('click', () => {
-        if (currentFontSize > 80) {
-            currentFontSize -= 10;
-            document.documentElement.style.fontSize = `${currentFontSize}%`;
-        }
-    });
+    if (btnDecrease) {
+        btnDecrease.onclick = () => {
+            if (zoomLevel > 80) {
+                zoomLevel -= 10;
+                document.body.style.zoom = `${zoomLevel}%`;
+            }
+        };
+    }
 
-    // Restaurar tamanho padrão
-    btnReset.addEventListener('click', () => {
-        currentFontSize = 100;
-        document.documentElement.style.fontSize = '100%';
-    });
+    if (btnReset) {
+        btnReset.onclick = () => {
+            zoomLevel = 100;
+            document.body.style.zoom = '100%';
+        };
+    }
 
-    // Alternar Alto Contraste
-    btnContrast.addEventListener('click', () => {
-        document.body.classList.toggle('high-contrast');
-    });
-}
+    if (btnContrast) {
+        btnContrast.onclick = () => {
+            document.body.classList.toggle('high-contrast');
+        };
+    }
+});

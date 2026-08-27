@@ -8,8 +8,19 @@
 </head>
 <body>
 
-    <!-- Fundo Interativo de Rede Neural -->
+    <!-- Fundo Interativo -->
     <canvas id="neural-canvas"></canvas>
+
+    <!-- Barra de Acessibilidade -->
+    <div class="accessibility-bar">
+        <div class="container-accessibility">
+            <span class="accessibility-title">♿ Acessibilidade:</span>
+            <button id="btn-increase-font" class="btn-access" title="Aumentar Fonte">A+</button>
+            <button id="btn-decrease-font" class="btn-access" title="Diminuir Fonte">A-</button>
+            <button id="btn-reset-font" class="btn-access" title="Tamanho Normal">A</button>
+            <button id="btn-high-contrast" class="btn-access" title="Alto Contraste">🎨 Alto Contraste</button>
+        </div>
+    </div>
 
     <!-- Navegação -->
     <nav class="navbar">
@@ -24,16 +35,6 @@
             <li><a href="#pros-contras">Impactos</a></li>
             <li><a href="#quiz">Quiz</a></li>
         </ul>
-        <!-- Painel de Acessibilidade -->
-<div class="accessibility-bar">
-    <div class="container-accessibility">
-        <span class="accessibility-title">♿ Acessibilidade:</span>
-        <button id="btn-increase-font" class="btn-access" title="Aumentar Fonte">A+</button>
-        <button id="btn-decrease-font" class="btn-access" title="Diminuir Fonte">A-</button>
-        <button id="btn-reset-font" class="btn-access" title="Tamanho Normal">A</button>
-        <button id="btn-high-contrast" class="btn-access" title="Alto Contraste">🎨 Alto Contraste</button>
-    </div>
-</div>
     </nav>
 
     <!-- Hero Section -->
@@ -50,11 +51,11 @@
         <section id="sobre" class="card">
             <h2>O que é IA e qual sua Importância?</h2>
             <p class="lead-text">
-                A Inteligência Artificial é um sistema de computador que tem a capacidade de simular a inteligência de um ser humano, assim tendo o conhecimento e a capacidade de resolver problemas e evoluir em áreas como a tomada de decisões.
+                A Inteligência Artificial é um sistema de computador com a capacidade de simular a inteligência humana, processando informações para resolver problemas, tomar decisões e evoluir com o tempo.
             </p>
         </section>
 
-        <!-- Como Funciona a IA (Camadas da Tecnologia) -->
+        <!-- Como Funciona a IA -->
         <section id="como-funciona" class="card">
             <h2>Como a IA Funciona?</h2>
             <p>A Inteligência Artificial opera através de diferentes níveis de complexidade tecnológica:</p>
@@ -62,17 +63,17 @@
                 <div class="layer-card">
                     <span class="layer-tag">Nível 1</span>
                     <h3>Inteligência Artificial</h3>
-                    <p>O conceito amplo de máquinas simulando a inteligência humana.</p>
+                    <p>O conceito amplo de máquinas simulando o raciocínio humano.</p>
                 </div>
                 <div class="layer-card">
                     <span class="layer-tag">Nível 2</span>
                     <h3>Machine Learning</h3>
-                    <p>Algoritmos que aprendem e melhoram automaticamente através da análise de dados.</p>
+                    <p>Algoritmos que aprendem e melhoram automaticamente analisando dados.</p>
                 </div>
                 <div class="layer-card">
                     <span class="layer-tag">Nível 3</span>
                     <h3>Deep Learning</h3>
-                    <p>Redes neurais profundas inspiradas no cérebro humano para reconhecer padrões complexos.</p>
+                    <p>Redes neurais profundas inspiradas no cérebro para identificar padrões complexos.</p>
                 </div>
             </div>
         </section>
@@ -80,80 +81,80 @@
         <!-- Como a IA Aprende -->
         <section id="aprendizado" class="card">
             <h2>Como a IA Aprende?</h2>
-            <p>Para tomar decisões, os algoritmos passam por um processo de treinamento usando grandes volumes de dados. Existem três métodos principais:</p>
+            <p>Para tomar decisões, os algoritmos são treinados usando grandes volumes de dados através de três métodos principais:</p>
             
             <div class="learning-grid">
                 <div class="learning-card">
                     <span class="icon">🎯</span>
                     <h3>Supervisionado</h3>
-                    <p>O sistema recebe dados com respostas corretas (ex: fotos rotuladas como "gato" ou "cachorro") para aprender a identificar padrões.</p>
+                    <p>O sistema recebe dados rotulados com respostas corretas para aprender os padrões esperados.</p>
                 </div>
                 <div class="learning-card">
                     <span class="icon">🔍</span>
                     <h3>Não Supervisionado</h3>
-                    <p>A IA analisa dados sem rótulos ou instruções prévias, descobrindo grupos e padrões ocultos por conta própria.</p>
+                    <p>A IA analisa dados sem rótulos ou instruções, descobrindo conexões e grupos por conta própria.</p>
                 </div>
                 <div class="learning-card">
                     <span class="icon">🏆</span>
                     <h3>Por Reforço</h3>
-                    <p>O algoritmo aprende por tentativa e erro recebendo "recompensas" ou "punições", estilo a lógica de um videogame.</p>
+                    <p>O algoritmo aprende por tentativa e erro através de recompensas e punições dentro de um ambiente digital.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Tipos de IA Interativos -->
+        <!-- Tipos de IA -->
         <section id="tipos" class="card">
             <h2>Tipos de Inteligência Artificial</h2>
             <div class="tabs">
-                <button class="tab-btn active" onclick="openTab(event, 'ani')">IA Estreita (Restrita)</button>
-                <button class="tab-btn" onclick="openTab(event, 'agi')">IA Geral</button>
-                <button class="tab-btn" onclick="openTab(event, 'asi')">Superinteligência</button>
+                <button class="tab-btn active" onclick="openTab(event, 'ani')">IA Estreita (ANI)</button>
+                <button class="tab-btn" onclick="openTab(event, 'agi')">IA Geral (AGI)</button>
+                <button class="tab-btn" onclick="openTab(event, 'asi')">Superinteligência (ASI)</button>
             </div>
 
             <div id="ani" class="tab-content active">
                 <h3>IA Estreita (Inteligência Artificial Restrita)</h3>
-                <p>Voltada para tarefas únicas e específicas. É a IA utilizada em serviços do dia a dia, como assistentes virtuais, reconhecimentos faciais, algoritmos de redes sociais e modelos de linguagem como o ChatGPT. Ela engloba praticamente todas as tecnologias de IA existentes atualmente.</p>
+                <p>Especializada em executar tarefas específicas, como reconhecimento facial, assistentes de voz e modelos de linguagem. É a única forma de IA existente no mundo real atualmente.</p>
             </div>
             <div id="agi" class="tab-content">
                 <h3>IA Geral (Inteligência Artificial Geral)</h3>
-                <p>É um sistema com inteligência equivalente à do ser humano, com capacidade de aprender e raciocinar em qualquer área do conhecimento. Atualmente, ainda está sendo desenvolvida e aprimorada por pesquisadores no mundo todo.</p>
+                <p>Projetada para igualar a capacidade cognitiva humana em qualquer área. É um conceito em desenvolvimento por pesquisadores ao redor do mundo.</p>
             </div>
             <div id="asi" class="tab-content">
                 <h3>Superinteligência Artificial</h3>
-                <p>Conceitualmente projetada para superar o conhecimento humano em qualquer área existente — incluindo raciocínio lógico, inteligência emocional e até mesmo a criatividade.</p>
+                <p>Um nível teórico de IA capaz de superar amplamente a inteligência humana em todas as áreas, incluindo criatividade, lógica e resolução de problemas complexos.</p>
             </div>
         </section>
 
-        <!-- Linha do Tempo da História e Avanços -->
+        <!-- História e Avanços -->
         <section id="historia" class="card">
-            <h2>Sua História e Seus Avanços</h2>
+            <h2>História e Grandes Marcos</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <span class="year">1950</span>
                     <h3>O Teste de Turing</h3>
-                    <p>O cientista e matemático Alan Turing propôs um famoso teste para avaliar se uma máquina conseguiria simular com precisão a inteligência humana.</p>
+                    <p>Alan Turing propôs um teste para determinar se uma máquina pode exibir comportamento inteligente indistinguível de um humano.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="year">1997</span>
-                    <h3>Deep Blue vs. Garry Kasparov</h3>
-                    <p>Garry Kasparov, campeão mundial de xadrez considerado o melhor enxadrista da história, foi vencido pela primeira vez por um supercomputador chamado Deep Blue.</p>
+                    <h3>Deep Blue vs. Kasparov</h3>
+                    <p>O supercomputador da IBM venceu o campeão mundial de xadrez Garry Kasparov em um confronto histórico.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="year">2012</span>
-                    <h3>Evolução do Deep Learning</h3>
-                    <p>Redes neurais profundas se aprofundaram e demonstraram precisão e evolução histórica no reconhecimento e classificação de imagens.</p>
+                    <h3>Avanço do Deep Learning</h3>
+                    <p>Redes neurais profundas revolucionaram o reconhecimento de imagens e o processamento de voz.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="year">2022 - Presente</span>
-                    <h3>Era dos Modelos Multimodais</h3>
-                    <p>Consolida-se a era das IAs generativas avançadas com alto conhecimento para processar e gerar textos, áudios, vídeos e códigos simultaneamente.</p>
+                    <h3>IAs Generativas e Multimodais</h3>
+                    <p>Consolidação de modelos capazes de gerar e interpretar texto, áudio, imagem e código simultaneamente.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Inteligências Mais Conhecidas -->
+        <!-- IAs Famosas -->
         <section id="famosas" class="card">
-            <h2>Inteligências Mais Conhecidas na Atualidade</h2>
+            <h2>Inteligências Mais Conhecidas</h2>
             <div class="grid-ias">
                 <div class="ia-card">
                     <div class="ia-header">
@@ -161,7 +162,7 @@
                         <span class="badge">Texto & Código</span>
                     </div>
                     <p class="dev"><strong>Desenvolvedor:</strong> OpenAI</p>
-                    <p>Um modelo de linguagem popular focado em conversas, redações e até mesmo programação.</p>
+                    <p>Modelo de linguagem focado em conversação, escrita de textos e desenvolvimento de código.</p>
                 </div>
 
                 <div class="ia-card">
@@ -170,55 +171,55 @@
                         <span class="badge">Multimodal</span>
                     </div>
                     <p class="dev"><strong>Desenvolvedor:</strong> Google</p>
-                    <p>Semelhante ao Chat, é uma IA multimodal nativa, capaz de raciocinar sobre textos, imagens, áudios e vídeos com fácil acesso.</p>
+                    <p>Sistema capaz de processar e raciocinar nativamente sobre textos, imagens, áudios e vídeos.</p>
                 </div>
 
                 <div class="ia-card">
                     <div class="ia-header">
                         <h3>Claude</h3>
-                        <span class="badge">Análise & Segurança</span>
+                        <span class="badge">Análise & Escrita</span>
                     </div>
                     <p class="dev"><strong>Desenvolvedor:</strong> Anthropic</p>
-                    <p>É focada em segurança, realizando análises detalhadas de documentos e mantendo uma escrita natural.</p>
+                    <p>Focado em segurança, processamento de grandes volumes de dados e escrita natural.</p>
                 </div>
 
                 <div class="ia-card">
                     <div class="ia-header">
                         <h3>Midjourney</h3>
-                        <span class="badge">Arte & Imagem</span>
+                        <span class="badge">Geração de Imagens</span>
                     </div>
                     <p class="dev"><strong>Desenvolvedor:</strong> Midjourney Inc.</p>
-                    <p>Especializada em criar artes visuais hiper-realistas a partir da descrição de textos (acesso pago).</p>
+                    <p>Especializado em transformar descrições em texto em obras de arte e ilustrações hiper-realistas.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Vantagens e Desafios Éticos -->
+        <!-- Vantagens e Desafios -->
         <section id="pros-contras" class="card">
             <h2>Vantagens e Desafios Éticos</h2>
             <div class="impacts-grid">
                 <div class="impact-card pros">
                     <h3>⚡ Vantagens</h3>
                     <ul>
-                        <li><strong>Automação de Tarefas:</strong> Redução do tempo gasto em atividades repetitivas.</li>
-                        <li><strong>Análise de Dados Avançada:</strong> Processamento de grandes volumes de informação com precisão.</li>
-                        <li><strong>Disponibilidade 24/7:</strong> Sistemas operando continuamente sem fadiga humana.</li>
-                        <li><strong>Avanços Médicos:</strong> Diagnósticos precoces e auxílio na descoberta de novos medicamentos.</li>
+                        <li><strong>Automação:</strong> Otimização de processos repetitivos.</li>
+                        <li><strong>Análise de Dados:</strong> Processamento em larga escala com alta precisão.</li>
+                        <li><strong>Disponibilidade:</strong> Operação contínua sem interrupções.</li>
+                        <li><strong>Avanços Científicos:</strong> Apoio em diagnósticos e pesquisas médicas.</li>
                     </ul>
                 </div>
                 <div class="impact-card contras">
                     <h3>⚠️ Desafios Éticos</h3>
                     <ul>
-                        <li><strong>Viés Algorítmico:</strong> Riscos de discriminação se os dados de treinamento forem tendenciosos.</li>
-                        <li><strong>Privacidade e Dados:</strong> Preocupações sobre o uso e armazenamento de dados pessoais.</li>
-                        <li><strong>Impacto no Mercado de Trabalho:</strong> Substituição de certas funções por sistemas automatizados.</li>
-                        <li><strong>Desinformação:</strong> Criação de *deepfakes* e conteúdos sintéticos manipuladores.</li>
+                        <li><strong>Viés Algorítmico:</strong> Riscos de reproduzir preconceitos dos dados de treino.</li>
+                        <li><strong>Privacidade:</strong> Tratamento e segurança de dados pessoais.</li>
+                        <li><strong>Mercado de Trabalho:</strong> Mudanças estruturais em diversas profissões.</li>
+                        <li><strong>Desinformação:</strong> Uso indevido para criação de *deepfakes*.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Quiz Interativo Didático -->
+        <!-- Quiz Interativo -->
         <section id="quiz" class="card">
             <h2>Teste seus Conhecimentos</h2>
             <div id="quiz-container">
