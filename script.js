@@ -249,3 +249,42 @@ if (canvas) {
 
 // Inicialização imediata do quiz
 loadQuestion();
+// ==========================================
+// 4. FUNCIONALIDADES DE ACESSIBILIDADE
+// ==========================================
+let currentFontSize = 100; // Porcentagem do tamanho inicial da fonte
+
+const btnIncrease = document.getElementById('btn-increase-font');
+const btnDecrease = document.getElementById('btn-decrease-font');
+const btnReset = document.getElementById('btn-reset-font');
+const btnContrast = document.getElementById('btn-high-contrast');
+
+if (btnIncrease && btnDecrease && btnReset && btnContrast) {
+
+    // Aumentar fonte
+    btnIncrease.addEventListener('click', () => {
+        if (currentFontSize < 140) {
+            currentFontSize += 10;
+            document.documentElement.style.fontSize = `${currentFontSize}%`;
+        }
+    });
+
+    // Diminuir fonte
+    btnDecrease.addEventListener('click', () => {
+        if (currentFontSize > 80) {
+            currentFontSize -= 10;
+            document.documentElement.style.fontSize = `${currentFontSize}%`;
+        }
+    });
+
+    // Restaurar tamanho padrão
+    btnReset.addEventListener('click', () => {
+        currentFontSize = 100;
+        document.documentElement.style.fontSize = '100%';
+    });
+
+    // Alternar Alto Contraste
+    btnContrast.addEventListener('click', () => {
+        document.body.classList.toggle('high-contrast');
+    });
+}

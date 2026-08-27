@@ -386,3 +386,90 @@ body {
     font-size: 0.95rem;
     line-height: 1.4;
 }
+/* Barra de Acessibilidade */
+.accessibility-bar {
+    background: rgba(13, 17, 23, 0.95);
+    border-bottom: 1px solid var(--card-border);
+    padding: 0.4rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 101;
+}
+
+.container-accessibility {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.accessibility-title {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    margin-right: 0.5rem;
+}
+
+.btn-access {
+    background: var(--bg-dark);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-access:hover {
+    background: var(--petroleo-light);
+    color: var(--acento-ciano);
+}
+
+/* Modo Alto Contraste */
+body.high-contrast {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+}
+
+body.high-contrast #neural-canvas {
+    display: none; /* Desativa fundo dinâmico para melhorar legibilidade */
+}
+
+body.high-contrast .navbar,
+body.high-contrast .accessibility-bar {
+    background: #000000 !important;
+    border-color: #ffff00 !important;
+}
+
+body.high-contrast .card,
+body.high-contrast .impact-card,
+body.high-contrast .learning-card,
+body.high-contrast .ia-card,
+body.high-contrast .layer-card {
+    background: #000000 !important;
+    border: 2px solid #ffff00 !important;
+}
+
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast a,
+body.high-contrast .logo span,
+body.high-contrast .highlight,
+body.high-contrast .year {
+    color: #ffff00 !important;
+    text-shadow: none !important;
+}
+
+body.high-contrast button {
+    background: #000000 !important;
+    color: #ffff00 !important;
+    border: 2px solid #ffff00 !important;
+}
+
+body.high-contrast button:hover {
+    background: #ffff00 !important;
+    color: #000000 !important;
+}
