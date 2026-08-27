@@ -17,9 +17,11 @@
         <ul class="nav-links">
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#como-funciona">Funcionamento</a></li>
+            <li><a href="#aprendizado">Aprendizado</a></li>
             <li><a href="#tipos">Tipos</a></li>
             <li><a href="#historia">História</a></li>
             <li><a href="#famosas">IAs Conhecidas</a></li>
+            <li><a href="#pros-contras">Impactos</a></li>
             <li><a href="#quiz">Quiz</a></li>
         </ul>
     </nav>
@@ -61,30 +63,30 @@
                     <span class="layer-tag">Nível 3</span>
                     <h3>Deep Learning</h3>
                     <p>Redes neurais profundas inspiradas no cérebro humano para reconhecer padrões complexos.</p>
-                    <main class="container">
-                        <!-- Como a IA Aprende (Treinamento) -->
-<section id="aprendizado" class="card">
-    <h2>Como a IA Aprende?</h2>
-    <p>Para tomar decisões, os algoritmos passam por um processo de treinamento usando grandes volumes de dados. Existem três métodos principais:</p>
-    
-    <div class="learning-grid">
-        <div class="learning-card">
-            <span class="icon">🎯</span>
-            <h3>Supervisionado</h3>
-            <p>O sistema recebe dados com respostas corretas (ex: fotos rotuladas como "gato" ou "cachorro") para aprender a identificar padrões.</p>
-        </div>
-        <div class="learning-card">
-            <span class="icon">🔍</span>
-            <h3>Não Supervisionado</h3>
-            <p>A IA analisa dados sem rótulos ou instruções prévias, descobrindo grupos e padrões ocultos por conta própria.</p>
-        </div>
-        <div class="learning-card">
-            <span class="icon">🏆</span>
-            <h3>Por Reforço</h3>
-            <p>O algoritmo aprende por tentativa e erro recebendo "recompensas" ou "punições", estilo a lógica de um videogame.</p>
-        </div>
-    </div>
-</section>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como a IA Aprende -->
+        <section id="aprendizado" class="card">
+            <h2>Como a IA Aprende?</h2>
+            <p>Para tomar decisões, os algoritmos passam por um processo de treinamento usando grandes volumes de dados. Existem três métodos principais:</p>
+            
+            <div class="learning-grid">
+                <div class="learning-card">
+                    <span class="icon">🎯</span>
+                    <h3>Supervisionado</h3>
+                    <p>O sistema recebe dados com respostas corretas (ex: fotos rotuladas como "gato" ou "cachorro") para aprender a identificar padrões.</p>
+                </div>
+                <div class="learning-card">
+                    <span class="icon">🔍</span>
+                    <h3>Não Supervisionado</h3>
+                    <p>A IA analisa dados sem rótulos ou instruções prévias, descobrindo grupos e padrões ocultos por conta própria.</p>
+                </div>
+                <div class="learning-card">
+                    <span class="icon">🏆</span>
+                    <h3>Por Reforço</h3>
+                    <p>O algoritmo aprende por tentativa e erro recebendo "recompensas" ou "punições", estilo a lógica de um videogame.</p>
                 </div>
             </div>
         </section>
@@ -181,26 +183,7 @@
             </div>
         </section>
 
-        <!-- Quiz Interativo -->
-        <section id="quiz" class="card">
-            <h2>Teste seus Conhecimentos</h2>
-            <div id="quiz-container">
-                <p id="question-text">Quem foi o campeão mundial de xadrez vencido pelo supercomputador Deep Blue em 1997?</p>
-                <div class="quiz-options">
-                    <button onclick="checkAnswer(this, false)">Alan Turing</button>
-                    <button onclick="checkAnswer(this, true)">Garry Kasparov</button>
-                    <button onclick="checkAnswer(this, false)">Ada Lovelace</button>
-                    <button onclick="checkAnswer(this, false)">Geoffrey Hinton</button>
-                </div>
-                <p id="quiz-result"></p>
-            </div>
-        </section>
-
-    </main>
-
-    <script src="script.js"></script>
-</body>
-<!-- Nova Seção: Vantagens e Desafios Éticos -->
+        <!-- Vantagens e Desafios Éticos -->
         <section id="pros-contras" class="card">
             <h2>Vantagens e Desafios Éticos</h2>
             <div class="impacts-grid">
@@ -225,12 +208,12 @@
             </div>
         </section>
 
-        <!-- Quiz Interativo Expandido -->
+        <!-- Quiz Interativo Didático -->
         <section id="quiz" class="card">
             <h2>Teste seus Conhecimentos</h2>
             <div id="quiz-container">
                 <div id="quiz-content">
-                    <p id="quiz-question-number" class="badge">Pergunta 1 de 3</p>
+                    <p id="quiz-question-number" class="badge">Pergunta 1 de 6</p>
                     <h3 id="question-text" style="margin: 0.8rem 0; color: var(--text-main);"></h3>
                     <div id="quiz-options" class="quiz-options"></div>
                 </div>
@@ -240,4 +223,9 @@
                 </div>
             </div>
         </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
 </html>

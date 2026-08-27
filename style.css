@@ -58,14 +58,14 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .nav-links a {
     color: var(--text-main);
     text-decoration: none;
     transition: color 0.3s;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .nav-links a:hover {
@@ -164,6 +164,38 @@ body {
 .layer-card h3 {
     margin: 0.4rem 0;
     color: var(--text-main);
+}
+
+/* Cards de Aprendizado */
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.learning-card {
+    background: rgba(13, 17, 23, 0.6);
+    border: 1px solid var(--card-border);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.learning-card .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.learning-card h3 {
+    color: var(--acento-ciano);
+    margin-bottom: 0.5rem;
+}
+
+.learning-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* Abas Interativas */
@@ -284,37 +316,7 @@ body {
     margin-bottom: 0.8rem;
 }
 
-/* Quiz Interativo */
-.quiz-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    margin: 1.2rem 0;
-}
-
-.quiz-options button {
-    background: var(--bg-dark);
-    border: 1px solid var(--card-border);
-    color: var(--text-main);
-    padding: 0.8rem;
-    border-radius: 6px;
-    cursor: pointer;
-    text-align: left;
-    transition: 0.3s;
-    font-size: 1rem;
-}
-
-.quiz-options button:hover {
-    background: var(--petroleo-light);
-    border-color: var(--acento-ciano);
-}
-
-#quiz-result {
-    font-weight: bold;
-    margin-top: 0.8rem;
-    font-size: 1.05rem;
-}
-/* Seção Vantagens e Desafios */
+/* Vantagens e Desafios */
 .impacts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -349,7 +351,14 @@ body {
     font-size: 0.95rem;
 }
 
-/* Ajustes no Quiz Dinâmico */
+/* Quiz Interativo */
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 1.2rem 0;
+}
+
 .quiz-options button {
     background: var(--bg-dark);
     border: 1px solid var(--card-border);
@@ -367,39 +376,7 @@ body {
     background: var(--petroleo-light);
     border-color: var(--acento-ciano);
 }
-/* Cards de Aprendizado */
-.learning-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.2rem;
-    margin-top: 1.5rem;
-}
 
-.learning-card {
-    background: rgba(13, 17, 23, 0.6);
-    border: 1px solid var(--card-border);
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.learning-card .icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.learning-card h3 {
-    color: var(--acento-ciano);
-    margin-bottom: 0.5rem;
-}
-
-.learning-card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-/* Explicação do Quiz */
 #quiz-explanation {
     margin-top: 1rem;
     padding: 0.8rem;
