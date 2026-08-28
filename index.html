@@ -238,5 +238,19 @@
     </main>
 
     <script src="script.js"></script>
+    <script>
+  // Garante que a página sempre role para o topo ao ser carregada ou recarregada
+  window.addEventListener('beforeunload', function () {
+    window.scrollTo(0, 0);
+  });
+
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  window.onload = function() {
+    window.scrollTo(0, 0);
+  };
+</script>
 </body>
 </html>
